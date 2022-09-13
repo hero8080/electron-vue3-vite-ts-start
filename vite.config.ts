@@ -6,6 +6,7 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import electron, { onstart } from "vite-plugin-electron";
 // https://vitejs.dev/config/
 export default defineConfig({
+  // base: "./",
   plugins: [
     vue(),
     vueJsx(),
@@ -40,6 +41,9 @@ export default defineConfig({
       renderer: {},
     }),
   ],
+  build: {
+    outDir: "dist/studio",
+  },
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

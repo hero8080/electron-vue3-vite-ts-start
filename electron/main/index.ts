@@ -2,6 +2,7 @@ import { app, BrowserWindow, shell, ipcMain } from "electron";
 import { release } from "os";
 import { join } from "path";
 
+console.log("getTime" + new Date().getTime());
 // Disable GPU Acceleration for Windows 7
 if (release().startsWith("6.1")) app.disableHardwareAcceleration();
 
@@ -20,14 +21,14 @@ if (!app.requestSingleInstanceLock()) {
 
 export const ROOT_PATH = {
   // /dist
-  dist: join(__dirname, "../.."),
+  dist: join(__dirname, "../../studio"),
   // /dist or /public
   public: join(__dirname, app.isPackaged ? "../.." : "../../../public"),
 };
 let win: BrowserWindow | null = null;
 // Here, you can also use other preload
 const preload = join(__dirname, "../preload/index.js");
-const url = 'http://192.168.220.1:5173/';
+const url = "http://192.168.220.1:5173/";
 const indexHtml = join(ROOT_PATH.dist, "index.html");
 
 async function createWindow() {

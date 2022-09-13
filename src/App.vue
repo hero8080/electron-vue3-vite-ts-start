@@ -77,6 +77,7 @@ nav a:first-of-type {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
+    background-image: url(@/assets/logo.svg);
   }
 
   nav {
