@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "dev": "vite --host",
+    "dev:only": "vite --host",
     "build": "run-p type-check build-only",
     "preview": "vite preview --port 4173",
     "test:e2e": "start-server-and-test preview http://localhost:4173/ 'cypress open --e2e'",
@@ -17,6 +18,7 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.cypress-ct.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "electron:only": "electron .",
     "electron:build": "vite build && electron-builder"
   },
   "dependencies": {
