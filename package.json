@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "vue": "^3.2.39",
-    "vue-router": "^4.1.5"
+    "vue-router": "^4.1.5",
+    "vue3-json-viewer": "^2.2.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
@@ -34,6 +35,8 @@
     "@vue/eslint-config-typescript": "^11.0.1",
     "@vue/tsconfig": "^0.1.3",
     "cypress": "^10.7.0",
+    "electron": "^20.1.3",
+    "electron-builder": "^23.3.3",
     "eslint": "^8.23.1",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-vue": "^9.4.0",
@@ -42,12 +45,10 @@
     "start-server-and-test": "^1.14.0",
     "typescript": "~4.7.4",
     "vite": "^3.1.0",
-    "vue-tsc": "^0.40.13",
-    "electron": "^20.1.3",
-    "electron-builder": "^23.3.3",
-    "vite-plugin-electron": "^0.9.3"
+    "vite-plugin-electron": "^0.9.3",
+    "vue-tsc": "^0.40.13"
   },
-  "build":{
+  "build": {
     "appId": "YourAppID",
     "asar": true,
     "directories": {

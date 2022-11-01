@@ -1,8 +1,7 @@
-import { app, BrowserWindow, shell, ipcMain } from "electron";
+import { app, BrowserWindow, shell, ipcMain, dialog } from "electron";
 import { release } from "os";
 import { join } from "path";
 
-console.log("getTime" + new Date().getTime());
 // Disable GPU Acceleration for Windows 7
 if (release().startsWith("6.1")) app.disableHardwareAcceleration();
 
@@ -43,6 +42,14 @@ async function createWindow() {
       nodeIntegration: true,
       contextIsolation: false,
     },
+  });
+
+  dialog.showMessageBox(win, {
+    title: "process.argv",
+    type: "info",
+    textWidth: 1200,
+    message: JSON.stringify(process.argv.slice(1)),
+    detail: JSON.stringify(process.argv.slice(1)),
   });
 
   if (app.isPackaged) {

@@ -1,10 +1,35 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
+import "vue3-json-viewer/dist/index.css";
+// @ts-ignore
+const myProcess = process;
 </script>
 
 <template>
-  <header>
+  <div style="display: flex;height: 100%;align-items: stretch">
+    <div style="overflow-y: auto;flex: 1">
+      <json-viewer
+        class="my-json-viewer"
+        :expand-depth="10"
+        :value="myProcess"
+        expanded
+        boxed
+        sort
+      />
+    </div>
+    <div style="overflow-y: auto;flex: 1">
+      <json-viewer
+        class="my-json-viewer"
+        :expand-depth="10"
+        :value="myProcess.argv"
+        expanded
+        boxed
+        sort
+      />
+    </div>
+  </div>
+  <header style="display: none">
     <img
       alt="Vue logo"
       class="logo"
@@ -22,7 +47,7 @@ import HelloWorld from "./components/HelloWorld.vue";
     </div>
   </header>
 
-  <RouterView />
+<!--  <RouterView />-->
 </template>
 
 <style scoped>
